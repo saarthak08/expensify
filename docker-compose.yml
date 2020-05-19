@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: saarthak08/expensify-dev
+    volumes:
+      - '.:/expensify'
+      - '/expensify/node_modules'
+    ports:
+      - 8080:8080
+    environment:
+      - CHOKIDAR_USEPOLLING=true

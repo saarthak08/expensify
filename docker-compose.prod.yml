@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.production
+    image: saarthak08/expensify
+    ports:
+      - '8080:80'
