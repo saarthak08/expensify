@@ -8,6 +8,8 @@ import NotFoundPage from '../components/NotFoundPage';
 import Header from '../components/Header';
 
 
+// We can use HashRouter instead of BrowserRouter for production build
+
 const AppRouter = () => (
     <BrowserRouter>
         <div>
@@ -15,7 +17,7 @@ const AppRouter = () => (
             <Switch>
                 <Route path="/" component={ExpenseDashboardPage} exact={true} />
                 <Route path="/create" component={AddExpensePage} />
-                <Route path="/edit/:id" component={EditExpensePage} />
+                <Route path="/edit/:id" component={EditExpensePage}/>
                 <Route path='/help' component={HelpPage} />
                 <Route component={NotFoundPage} />
             </Switch>

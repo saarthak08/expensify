@@ -11,8 +11,8 @@
   },
   "scripts": {
     "pre": "rimraf build",
-    "dev": "yarn pre & webpack-dev-server --host 0.0.0.0 --config ./webpack.development.config.js",
-    "build": "yarn pre & NODE_ENV=production webpack --config ./webpack.production.config.js"
+    "dev": "yarn pre & webpack-dev-server --host 0.0.0.0",
+    "build": "yarn pre & NODE_ENV=production cross-env ENV='production' webpack"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
@@ -22,6 +22,7 @@
     "@babel/preset-react": "^7.9.4",
     "@hot-loader/react-dom": "^16.13.0",
     "babel-loader": "^8.1.0",
+    "cross-env": "^7.0.2",
     "css-loader": "^3.5.3",
     "html-loader": "^1.1.0",
     "html-webpack-plugin": "^4.3.0",
