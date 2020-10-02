@@ -10,7 +10,19 @@ const decrementCount = ({ decrementBy = 1 } = {}) => ({
     decrementBy
 });
 
-const store = createStore((state = { count: 0 }, action) => {
+const reset = () => ({type:'RESET'});
+
+const set = ({value = 1} = {}) => ({
+    type: 'SET',
+    value
+});
+
+
+
+//Reducer
+// Reducer are pure functions. (Do not rely on variables out of scope)
+// Never state change or action
+const countReducer = (state = { count: 0 }, action) => {
     switch (action.type) {
         case 'INCREMENT':
             //const incrementBy = typeof action.incrementBy === 'number' ? action.incrementBy : 1;
@@ -25,35 +37,32 @@ const store = createStore((state = { count: 0 }, action) => {
             return {
                 count: 0
             }
+        case 'SET':
+            return {
+                count: action.value
+            }
         default:
             return state;
     }
-});
+};
+
+const store = createStore(countReducer);
+
 
 const unsubscribe = store.subscribe(() => {
-    console.log(store.getState());
+    const state=state.getState();
 });
-
-/*
-store.dispatch({
-    type: 'INCREMENT',
-    incrementBy: 5
-});
-*/
 
 store.dispatch(incrementCount({ incrementBy: 5 }))
 
-
-
 store.dispatch(incrementCount());
 
+store.dispatch(reset());
 
 store.dispatch(decrementCount());
 
 store.dispatch(decrementCount({ decrementBy: 2 }));
 
-store.dispatch({
-    type: 'RESET'
-});
+store.dispatch(set({value:20}));
 
 unsubscribe();

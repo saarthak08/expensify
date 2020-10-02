@@ -36,7 +36,7 @@ else {
 
 common = {
     mode: isProduction ? 'production' : 'development',
-    entry: './src/playground/redux-101.js',
+    entry: './src/playground/redux-expensify.js',
     output: {
         filename: 'static/bundle.js',
         path: path.resolve(__dirname, 'build'),

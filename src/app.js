@@ -9,5 +9,5 @@ import '../styles/app.css';
 
 const render = (Component) =>
     ReactDOM.render(<AppRouter/>, document.getElementById('app'));
-
+    
 render(hot(AppRouter));
