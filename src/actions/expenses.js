@@ -23,6 +23,7 @@ export const addExpense = ({
 //Edit Expense Action Generator
 export const editExpense = (id,updates) => ({
     type: 'EDIT_EXPENSE',
+    id,
     updates 
 });
 

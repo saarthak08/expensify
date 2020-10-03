@@ -9,10 +9,6 @@ const AddExpensePageLink = () => (
     <NavLink to='/create' activeClassName='is-active'>Go to Add Expense Page</NavLink>
 );
 
-const EditExpensePageLink = () => (
-    <NavLink to='/edit/:id' activeClassName='is-active'>Go to Edit Expense Page</NavLink>
-);
-
 const HelpPageLink = () => (
     <NavLink to='/help' activeClassName='is-active'>Go to Help Page</NavLink>
 );
@@ -22,7 +18,6 @@ const Header = () => (
         <header>
             <h1>Expensify</h1>
             <AddExpensePageLink /><br />
-            <EditExpensePageLink /><br />
             <HelpPageLink /><br />
             <HomePageLink /><br /><br />
         </header>
